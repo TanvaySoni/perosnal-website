@@ -3,9 +3,10 @@ import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   onContactClick: () => void;
+  resumeLink: string;
 }
 
-export default function Navigation({ onContactClick }: NavigationProps) {
+export default function Navigation({ onContactClick, resumeLink }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -28,16 +29,16 @@ export default function Navigation({ onContactClick }: NavigationProps) {
     { label: 'Skills', id: 'skills' },
     { label: 'Projects', id: 'projects' },
     { label: 'Blog', id: 'blog' },
-    { label: 'Contact', id: 'contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 shadow-md' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
+        isScrolled ? 'bg-white/90 shadow-lg' : 'bg-white/30'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-10 py-3 flex items-center justify-between">
+
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -48,25 +49,41 @@ export default function Navigation({ onContactClick }: NavigationProps) {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
+
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() =>
-                link.id === 'contact'
-                  ? onContactClick()
-                  : scrollToSection(link.id)
-              }
-              className="text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-105 hover:drop-shadow-lg font-medium"
+              onClick={() => scrollToSection(link.id)}
+              className="text-gray-700 hover:text-teal-600 transition-all duration-200 hover:scale-105 font-medium"
             >
               {link.label}
             </button>
           ))}
+
+          {/* Contact Button */}
+          <button
+            onClick={onContactClick}
+            className="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all duration-300"
+          >
+            Contact
+          </button>
+
+          {/* Resume Button - VIEW PDF */}
+          <a
+            href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
+          >
+            Resume
+          </a>
+
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-gray-700 hover:text-teal-600 transition-all duration-300"
+          className="md:hidden p-2 text-gray-700 hover:text-teal-600 transition-all duration-200"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -75,21 +92,40 @@ export default function Navigation({ onContactClick }: NavigationProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-4 py-4 border-t border-gray-200">
+        <div className="md:hidden px-4 py-4 bg-white/95 shadow-md border-t border-gray-200">
+
           <div className="flex flex-col gap-4">
+
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() =>
-                  link.id === 'contact'
-                    ? onContactClick()
-                    : scrollToSection(link.id)
-                }
-                className="text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-105 hover:drop-shadow-lg font-medium text-left"
+                onClick={() => scrollToSection(link.id)}
+                className="text-gray-700 hover:text-teal-600 transition-all duration-200 text-left font-medium text-lg"
               >
                 {link.label}
               </button>
             ))}
+
+            <button
+              onClick={() => {
+                onContactClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all duration-200"
+            >
+              Contact
+            </button>
+
+            {/* Resume - VIEW PDF */}
+            <a
+              href={resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 text-center"
+            >
+              Resume
+            </a>
+
           </div>
         </div>
       )}

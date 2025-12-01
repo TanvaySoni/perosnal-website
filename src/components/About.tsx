@@ -5,7 +5,7 @@ export default function About() {
     {
       icon: Code2,
       label: 'Experience',
-      text: 'J2EE, Core Java, Python, Django, Data Science',
+      text: 'J2EE, Core Java, Business Development, Business Analyst, Communication, Data Science',
     },
     {
       icon: Cloud,
@@ -15,7 +15,7 @@ export default function About() {
     {
       icon: Wrench,
       label: 'Tools',
-      text: 'Git, Docker, SQL, Pandas, scikit-learn',
+      text: 'Git, Zoho CRM, N8N, MS-Office, SQL, Pandas, scikit-learn',
     },
   ];
 
@@ -26,9 +26,13 @@ export default function About() {
           About
         </h2>
 
-        <div className="prose prose-lg max-w-none mb-12 text-gray-700 leading-relaxed">
+        <div className="prose prose-lg max-w-none mb-15 text-gray-700 leading-relaxed">
           <p>
-            Tanvay Soni is a pragmatic, curiosity-driven software developer who builds practical systems that make people's lives easier. He blends a strong foundation in core Java / J2EE with Python-powered data science and web frameworks — always aiming for elegant, reliable solutions. Outside of code, Tanvay enjoys turning complex data into crisp insights and crafting polished user experiences. His recent work includes an AI-powered resume builder; he also holds AWS Cloud Foundations and Architecting certifications. He's collaborative, detail-oriented, and loves learning new tools that deliver real-world impact.
+            Tanvay Soni is a Motivated and detail-oriented Business Analyst freshly graduated with a strong interest in understanding 
+business needs and improving processes. Skilled in gathering requirements, documenting them, and analyzing 
+workflows to support smooth project execution. Comfortable working with stakeholders and contributing to 
+Agile projects. Has basic knowledge of data analysis, data cleaning, and visualization to support informed 
+decision-making. Known for clear communication, quick learning, and a positive, problem-solving attitude.
           </p>
         </div>
 

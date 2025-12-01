@@ -20,10 +20,12 @@ export default function Hero({ onViewWork, onContact }: HeroProps) {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
-            Software Developer • J2EE • Python • Data Science
+            Business Analyst , Side Skill- Software Developer • J2EE • Python • Data Science
           </p>
 
           <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+            i am a detail-oriented Business Analyst freshly graduated with a strong interest in understanding 
+business needs and improving processes.
             I build dependable web systems and data tools that turn complexity into clarity.
           </p>
 

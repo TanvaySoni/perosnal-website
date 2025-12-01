@@ -43,10 +43,13 @@ function App() {
   const handleViewWork = () => scrollToSection('projects');
   const handleContact = () => scrollToSection('contact');
 
+  // ✅ Your resume file inside public/videos folder
+  const resumeLink = "/videos/Tanvay_CV.pdf";
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
-      <Navigation onContactClick={handleContact} />
-      <Hero onViewWork={handleViewWork} onContact={handleContact} />
+      <Navigation onContactClick={handleContact} resumeLink={resumeLink} />
+      <Hero onViewWork={handleViewWork} onContact={handleContact} resumeLink={resumeLink} />
       <About />
       <Skills />
       <Projects />
