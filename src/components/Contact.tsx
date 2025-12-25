@@ -22,13 +22,15 @@ export default function Contact() {
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            action="/thank-you.html"
             className="space-y-6 bg-white p-8 rounded-2xl
                        border border-gray-100 shadow-sm"
           >
             {/* Netlify required hidden inputs */}
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
+
+            {/* ✅ THIS IS THE KEY FIX */}
+            <input type="hidden" name="redirect" value="/thank-you.html" />
 
             <div>
               <label className="block text-sm font-medium mb-2">Name</label>
