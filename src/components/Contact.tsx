@@ -22,7 +22,7 @@ export default function Contact() {
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            action="/thank-you"
+            action="/thank-you.html"
             className="space-y-6 bg-white p-8 rounded-2xl
                        border border-gray-100 shadow-sm"
           >
