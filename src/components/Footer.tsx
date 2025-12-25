@@ -39,7 +39,7 @@ export default function Footer() {
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/TanvaySoni_CV.pdf"
               download
               className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-teal-600 transition-colors"
               aria-label="Download Resume"

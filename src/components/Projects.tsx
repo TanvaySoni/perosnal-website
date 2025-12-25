@@ -1,122 +1,169 @@
 import { Github, X } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
-  const [hovered, setHovered] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [modalOpen, setModalOpen] = useState<number | null>(null);
 
-  const project = {
- title: 'AI Resume Builder',
-    subtitle: 'AI-powered resume generator',
-    description:
-      'An intelligent resume builder that parses user input and produces ATS-friendly resumes using NLP. Allows templating, PDF export, and role-specific recommendations.',
-    tech: ['java', 'spring-boot', 'reactjs', 'ollama', 'SQL'],
-    github: 'https://github.com/TanvaySoni/resume-ai',
-    demoVideo: '/videos/project-video.mp4', // Must be in public/videos/
-  };
+  const projects = [
+    {
+      title: 'AI Resume Builder',
+      subtitle: 'AI-powered resume generator',
+      description:
+        'An intelligent resume builder that parses user input and produces ATS-friendly resumes using NLP. Allows templating, PDF export, and role-specific recommendations.',
+      tech: ['Java', 'Spring Boot', 'ReactJS', 'Ollama', 'SQL'],
+      github: 'https://github.com/TanvaySoni/resume-ai',
+      demoVideo: '/videos/project-video.mp4',
+    },
+    {
+      title: 'AI Deepfake Detection System',
+      subtitle: 'Detects manipulated images & videos',
+      description:
+        'A deep learning-based system that identifies deepfake images and videos using CNN-based feature extraction and facial forensics techniques. Designed to improve media authenticity and cyber security.',
+      tech: ['Python', 'TensorFlow', 'CNN', 'OpenCV', 'Flask'],
+      github: 'https://github.com/TanvaySoni/deepfake-detection',
+      demoVideo: '/videos/deepfake-demo.mp4',
+    },
+  ];
 
   return (
-    <section id="projects" className="py-24 px-6 bg-white relative">
+    <section
+      id="projects"
+      className="relative px-4 sm:px-6 pt-12 sm:pt-20 pb-20 sm:pb-28
+ bg-gradient-to-b from-white via-gray-50/70 to-white"
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
-          Projects
-        </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          A showcase of my AI-based project and backend engineering.
-        </p>
+        
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-14"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            Projects
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full mb-4" />
+          <p className="text-gray-600 max-w-2xl">
+            A showcase of my AI-based projects and backend engineering work.
+          </p>
+        </motion.div>
 
-        <div className="max-w-md mx-auto">
-          <div
-            className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 hover:border-teal-300 hover:shadow-xl transition-all duration-300 flex flex-col"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            {/* Project Preview */}
-            <div
-              className="w-full h-48 rounded-lg mb-4 overflow-hidden relative cursor-pointer"
-              onClick={() => setModalOpen(true)}
+        {/* Projects grid */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="group bg-white/80 backdrop-blur border border-gray-100 rounded-2xl p-6 
+                         shadow-sm hover:shadow-2xl hover:border-teal-300 transition-all duration-300 flex flex-col"
             >
-              {!hovered ? (
-                <div className="w-full h-full bg-gradient-to-br from-teal-100 to-blue-100 flex items-center justify-center">
-                  <div className="text-6xl text-teal-600/20 font-mono">&lt;/&gt;</div>
-                </div>
-              ) : (
-                <video
-                  src={project.demoVideo}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover rounded-lg transition-all duration-500"
-                />
-              )}
-            </div>
-
-            {/* Content */}
-            <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-teal-600 transition-colors">
-              {project.title}
-            </h3>
-            <p className="text-sm text-gray-500 mb-3">{project.subtitle}</p>
-            <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-              {project.description}
-            </p>
-
-            {/* Tech Stack */}
-            <div className="mb-4">
-              <p className="text-xs font-semibold text-teal-600 mb-2">TECH STACK</p>
-              <div className="flex flex-wrap gap-1">
-                {project.tech.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2 py-1 bg-white border border-gray-200 text-gray-700 rounded text-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Links */}
-            <div className="flex gap-3 mt-auto pt-4 border-t border-gray-100">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-gray-600 hover:text-teal-600 transition-colors"
+              {/* Preview */}
+              <div
+                className="relative w-full h-52 rounded-xl mb-5 overflow-hidden cursor-pointer"
+                onClick={() => setModalOpen(index)}
               >
-                <Github className="w-4 h-4" />
-                Code
-              </a>
-            </div>
-          </div>
+                {hoveredIndex !== index ? (
+                  <div className="w-full h-full bg-gradient-to-br from-teal-100 to-blue-100 flex items-center justify-center">
+                    <div className="text-6xl text-teal-600/20 font-mono">&lt;/&gt;</div>
+                  </div>
+                ) : (
+                  <video
+                    src={project.demoVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                )}
+
+                {/* Glow overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+                                bg-gradient-to-tr from-teal-400/10 via-transparent to-blue-400/10" />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-teal-600 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-500 mb-3">
+                {project.subtitle}
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                {project.description}
+              </p>
+
+              {/* Tech stack */}
+              <div className="mb-4">
+                <p className="text-xs font-semibold text-teal-600 mb-2">
+                  TECH STACK
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, idx) => (
+                    <motion.span
+                      key={idx}
+                      whileHover={{ scale: 1.12 }}
+                      className="cursor-pointer px-3 py-1 rounded-full text-xs font-medium
+                                 bg-gradient-to-r from-teal-50 to-blue-50 text-teal-700
+                                 border border-teal-100 shadow-sm
+                                 hover:shadow-md hover:border-teal-300
+                                 transition-all duration-300"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Links */}
+              <div className="flex gap-3 mt-auto pt-4 border-t border-gray-100">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  Code
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {/* Fullscreen Modal */}
-      {modalOpen && (
+      {/* Modal */}
+      {modalOpen !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          onClick={() => setModalOpen(false)} // clicking overlay closes modal
+          onClick={() => setModalOpen(null)}
         >
-          {/* Modal content */}
           <div
             className="relative w-full max-w-4xl mx-auto px-4"
-            onClick={(e) => e.stopPropagation()} // stops closing when clicking inside
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
             <button
               className="absolute top-4 right-4 text-white hover:text-teal-400 transition"
-              onClick={() => setModalOpen(false)}
+              onClick={() => setModalOpen(null)}
             >
               <X className="w-8 h-8" />
             </button>
 
-            {/* Video */}
             <video
-              src={project.demoVideo}
+              src={projects[modalOpen].demoVideo}
               controls
               autoPlay
-              className="w-full max-h-[80vh] rounded-lg shadow-2xl border border-gray-700"
+              className="w-full max-h-[80vh] rounded-xl shadow-2xl border border-gray-700"
             />
           </div>
         </div>
