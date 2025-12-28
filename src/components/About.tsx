@@ -6,17 +6,17 @@ export default function About() {
     {
       icon: Code2,
       title: 'Backend Engineering',
-      text: 'Java, J2EE, Spring Boot, REST APIs, SQL, Application Architecture',
+      text: 'Java, J2EE, Spring Boot',
     },
     {
       icon: Cloud,
-      title: 'Cloud & DevOps',
-      text: 'AWS (EC2, S3, IAM, RDS), cloud-native fundamentals',
+      title: 'Cloud',
+      text: 'AWS (EC2, S3, IAM, RDS), cloud fundamentals',
     },
     {
       icon: Wrench,
       title: 'Tools & Ecosystem',
-      text: 'Git, GitHub, Postman, Zoho CRM, N8N, Pandas, scikit-learn',
+      text: 'Git, GitHub, intellij IDEA, VS Code',
     },
   ];
 
@@ -79,7 +79,7 @@ export default function About() {
             <p className="text-lg text-gray-800 leading-relaxed mb-4">
               I am a passionate <strong>Java Backend Developer</strong> with hands-on
               experience in building scalable applications using{' '}
-              <strong>Java, Spring Boot, RESTful APIs, and SQL</strong>.
+              <strong>Java, Spring Boot</strong>.
             </p>
 
             <p className="text-gray-700 mb-4">

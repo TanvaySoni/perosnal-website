@@ -11,13 +11,13 @@ export default function Projects() {
       title: 'AI Resume Builder',
       subtitle: 'AI-powered resume generator',
       description:
-        'An intelligent resume builder that parses user input and produces ATS-friendly resumes using NLP. Allows templating, PDF export, and role-specific recommendations.',
+        'An intelligent resume builder that parses user input and produces ATS-friendly resumes using INTREGATED AI. Allows templating, PDF export, and role-specific recommendations.',
       tech: ['Java', 'Spring Boot', 'ReactJS', 'Ollama', 'SQL'],
       github: 'https://github.com/TanvaySoni/resume-ai',
       demoVideo: '/videos/project-video.mp4',
     },
     {
-      title: 'AI Deepfake Detection System',
+     title: 'AI Deepfake Detection System(UNDER DEVELOPMENT)',
       subtitle: 'Detects manipulated images & videos',
       description:
         'A deep learning-based system that identifies deepfake images and videos using CNN-based feature extraction and facial forensics techniques. Designed to improve media authenticity and cyber security.',

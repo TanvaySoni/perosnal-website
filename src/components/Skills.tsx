@@ -4,7 +4,7 @@ export default function Skills() {
   const skillGroups = [
     {
       category: 'Backend',
-      skills: ['Core Java', 'J2EE', 'Spring Boot', 'Django', 'RESTful APIs'],
+      skills: ['Core Java', 'J2EE', 'Spring Boot'],
     },
     {
       category: 'Data & ML',
@@ -12,12 +12,9 @@ export default function Skills() {
     },
     {
       category: 'Cloud & Infra',
-      skills: ['AWS Foundations', 'AWS Architecting', 'Docker'],
+      skills: ['AWS Foundations', 'AWS Architecting'],
     },
-    {
-      category: 'Tools',
-      skills: ['Git', 'SQL', 'Pandas', 'Maven'],
-    },
+
   ];
 
   return (

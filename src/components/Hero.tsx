@@ -47,14 +47,14 @@ Cloud deployment successful`}
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
-            Java Backend Developer • Spring Boot • REST APIs
+            Java Developer • Spring Boot-(foundational) • AWS Enthusiast
           </p>
 
           <p className="text-lg text-gray-600 max-w-xl leading-relaxed mb-10">
             Early-career software developer with hands-on experience in
-            <strong> Java (JDK 17+), Spring Boot, RESTful API design, SQL, and AWS</strong>.
-            I build scalable backend systems, integrate modern frontends, and
-            deliver clean, reliable solutions in Agile environments.
+            <strong> Java , Spring Boot, AWS</strong>.
+            I build scalable web projects (prompt engineering), integrate modern frontends, and
+            clean, reliable solutions.
           </p>
 
           {/* CTA */}
