@@ -8,6 +8,7 @@ import Certifications from './components/Certifications';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Experience from "./components/Experience";
 
 function App() {
   useEffect(() => {
@@ -43,13 +44,18 @@ function App() {
   const handleViewWork = () => scrollToSection('projects');
   const handleContact = () => scrollToSection('contact');
 
-  // ✅ Your resume file inside public/videos folder
   const resumeLink = "/videos/Tanvay_CV.pdf";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Navigation onContactClick={handleContact} resumeLink={resumeLink} />
+
+      {/* ✅ Intro Section */}
       <Hero onViewWork={handleViewWork} onContact={handleContact} resumeLink={resumeLink} />
+
+      {/* ✅ Experience directly after Intro */}
+      <Experience />
+
       <About />
       <Skills />
       <Projects />

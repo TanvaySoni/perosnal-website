@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
   onContactClick: () => void;
@@ -12,44 +12,48 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
   };
 
+  // ✅ Added Experience here
   const navLinks = [
-    { label: 'About', id: 'about' },
-    { label: 'Skills', id: 'skills' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Blog', id: 'blog' },
+    { label: "Experience", id: "experience" },
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Projects", id: "projects" },
+    { label: "Blog", id: "blog" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 shadow-lg' : 'bg-white/30'
+        isScrolled ? "bg-white/90 shadow-lg" : "bg-white/30"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-10 py-3 flex items-center justify-between">
-
-        {/* Logo */}
+        {/* ✅ Logo (NO TSExperience + NO nested button) */}
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-xl md:text-2xl font-bold text-gray-900 hover:text-teal-600 transition-all duration-300 transform hover:scale-110"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-xl md:text-2xl font-extrabold tracking-tight hover:opacity-90 transition-all duration-300"
+          aria-label="Go to top"
         >
-          TS
+          <span className="text-teal-700">Tanvay </span>
+          <span className="text-teal-700">
+             Soni
+          </span>
         </button>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -68,7 +72,7 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
             Contact
           </button>
 
-          {/* Resume Button - VIEW PDF */}
+          {/* Resume Button */}
           <a
             href={resumeLink}
             target="_blank"
@@ -77,7 +81,6 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
           >
             Resume
           </a>
-
         </div>
 
         {/* Mobile Menu Button */}
@@ -93,9 +96,7 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 py-4 bg-white/95 shadow-md border-t border-gray-200">
-
           <div className="flex flex-col gap-4">
-
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -116,7 +117,6 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
               Contact
             </button>
 
-            {/* Resume - VIEW PDF */}
             <a
               href={resumeLink}
               target="_blank"
@@ -125,7 +125,6 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
             >
               Resume
             </a>
-
           </div>
         </div>
       )}
