@@ -8,22 +8,31 @@ export default function Projects() {
 
   const projects = [
     {
-      title: 'AI Resume Builder',
-      subtitle: 'AI-powered resume generator',
+      title: 'E-Commerce Test Automation Framework',
+      subtitle: 'Selenium-based end-to-end automation',
       description:
-        'An intelligent resume builder that parses user input and produces ATS-friendly resumes using INTREGATED AI. Allows templating, PDF export, and role-specific recommendations.',
-      tech: ['Java', 'Spring Boot', 'ReactJS', 'Ollama', 'SQL'],
-      github: 'https://github.com/TanvaySoni/resume-ai',
+        'A comprehensive test automation framework for e-commerce platforms using Selenium WebDriver and TestNG. Includes page object model, cross-browser testing, and CI/CD integration for continuous quality assurance.',
+      tech: ['Selenium', 'Java', 'TestNG', 'CI/CD', 'Jenkins'],
+      github: 'https://github.com/TanvaySoni/ecommerce-automation',
       demoVideo: '/videos/project-video.mp4',
     },
     {
-     title: 'AI Deepfake Detection System(UNDER DEVELOPMENT)',
-      subtitle: 'Detects manipulated images & videos',
+      title: 'API Test Automation Suite',
+      subtitle: 'REST API testing and validation',
       description:
-        'A deep learning-based system that identifies deepfake images and videos using CNN-based feature extraction and facial forensics techniques. Designed to improve media authenticity and cyber security.',
-      tech: ['Python', 'TensorFlow', 'CNN', 'OpenCV', 'Flask'],
-      github: 'https://github.com/TanvaySoni/deepfake-detection',
-      demoVideo: '/videos/deepfake-demo.mp4',
+        'An end-to-end API testing framework for validating REST endpoints, request/response schemas, and performance metrics. Built with Python pytest and integrated with CI pipelines for automated regression testing.',
+      tech: ['Python', 'pytest', 'Requests', 'CI/CD', 'GitHub Actions'],
+      github: 'https://github.com/TanvaySoni/api-automation-suite',
+      demoVideo: '/videos/api-demo.mp4',
+    },
+    {
+      title: 'Cypress Automation for React Apps',
+      subtitle: 'Modern UI testing framework',
+      description:
+        'A Cypress-based test automation framework designed for React applications. Demonstrates best practices for component testing, E2E testing, and visual regression testing with mocha reporter integration.',
+      tech: ['Cypress', 'JavaScript', 'React Testing', 'Mocha'],
+      github: 'https://github.com/TanvaySoni/cypress-react-automation',
+      demoVideo: '/videos/cypress-demo.mp4',
     },
   ];
 

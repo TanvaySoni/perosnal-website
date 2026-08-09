@@ -47,14 +47,13 @@ Cloud deployment successful`}
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
-            Java Developer • Spring Boot-(foundational) • AWS Enthusiast
+            QA/Automation Engineer • Test Automation • Quality Assurance
           </p>
 
           <p className="text-lg text-gray-600 max-w-xl leading-relaxed mb-10">
-            Early-career software developer with hands-on experience in
-            <strong> Java , Spring Boot, AWS</strong>.
-            I build scalable web projects (prompt engineering), integrate modern frontends, and
-            clean, reliable solutions.
+            QA/Automation Engineer with hands-on expertise in designing and implementing
+            robust test automation frameworks. I focus on improving product quality through
+            strategic testing, CI/CD integration, and continuous quality improvements.
           </p>
 
           {/* CTA */}

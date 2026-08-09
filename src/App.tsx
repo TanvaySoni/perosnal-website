@@ -44,7 +44,7 @@ function App() {
   const handleViewWork = () => scrollToSection('projects');
   const handleContact = () => scrollToSection('contact');
 
-  const resumeLink = "/videos/Tanvay_CV.pdf";
+  const resumeLink = "/TanvaySoni_CV.pdf";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">

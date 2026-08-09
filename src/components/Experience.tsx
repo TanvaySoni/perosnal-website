@@ -3,17 +3,31 @@ import ExperienceCard, { Experience as ExpType } from "./ExperienceCard";
 
 const experiences: ExpType[] = [
   {
+    role: "QA/Automation Engineer",
+    company: "47 Billion Information Technology Pvt. Ltd.",
+    type: "Onsite",
+    duration: "Feb 1, 2026 – Present",
+    logo: "/images/47billion.png",
+    tech: ["Selenium", "Python", "Cypress", "TestNG", "CI/CD", "API Testing"],
+    points: [
+      "Shifted focus to QA/Automation Engineering in February 2026.",
+      "Designed and implemented end-to-end test automation framework using Selenium and Python.",
+      "Built Cypress automation tests for React-based UI components with comprehensive coverage.",
+      "Integrated API testing into CI/CD pipelines using REST Assured and Postman.",
+      "Reduced manual testing time by 40% through strategic test automation initiatives.",
+    ],
+  },
+  {
     role: "Software Development Intern",
     company: "47 Billion Information Technology Pvt. Ltd.",
     type: "Onsite",
-    duration: "Jan 2026 – Present",
-    logo: "/images/47billion.png", // ✅ place in public/images
-    tech: ["React", "Tailwind CSS", "FastAPI", "Supabase", "LangChain", "Gemini API"],
+    duration: "Jan 2026 – Feb 1, 2026",
+    logo: "/images/47billion.png",
+    tech: ["React", "Tailwind CSS", "FastAPI", "Supabase", "LangChain"],
     points: [
       "Built responsive UI pages and reusable components using React + Tailwind CSS.",
       "Integrated AI PDF Chatbot features using RAG (LangChain + Gemini API).",
       "Created FastAPI endpoints for PDF upload, parsing and retrieval pipeline.",
-      "Improved maintainability through reusable components and clean folder structure.",
     ],
   },
 ];

@@ -3,16 +3,21 @@ import { motion } from 'framer-motion';
 export default function Skills() {
   const skillGroups = [
     {
-      category: 'Backend',
-      skills: ['Core Java', 'J2EE', 'Spring Boot'],
+      category: 'Test Automation',
+      skills: ['Selenium', 'Cypress', 'Playwright', 'API Testing'],
     },
     {
-      category: 'Data & ML',
-      skills: ['Python', 'Data Science', 'Data Analytics', 'scikit-learn'],
+      category: 'Testing Frameworks',
+      skills: ['JUnit', 'TestNG', 'pytest', 'Mocha', 'Jest'],
     },
     {
-      category: 'Cloud & Infra',
-      skills: ['AWS Foundations', 'AWS Architecting'],
+      category: 'CI/CD & Tools',
+      skills: ['Jenkins', 'GitHub Actions', 'Docker', 'GitLab CI', 'Azure DevOps'],
+    },
+
+    {
+      category: 'Languages & Methods',
+      skills: ['Java', 'Python', 'JavaScript', 'BDD', 'TDD'],
     },
 
   ];

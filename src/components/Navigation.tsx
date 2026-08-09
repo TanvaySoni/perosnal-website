@@ -47,9 +47,7 @@ export default function Navigation({ onContactClick, resumeLink }: NavigationPro
           aria-label="Go to top"
         >
           <span className="text-teal-700">Tanvay </span>
-          <span className="text-teal-700">
-             Soni
-          </span>
+          <span className="text-gray-700">Soni</span>
         </button>
 
         {/* Desktop Links */}

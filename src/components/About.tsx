@@ -5,18 +5,18 @@ export default function About() {
   const highlights = [
     {
       icon: Code2,
-      title: 'Backend Engineering',
-      text: 'Java, J2EE, Spring Boot',
+      title: 'Test Automation',
+      text: 'Selenium, Cypress, Playwright, API testing',
     },
     {
       icon: Cloud,
-      title: 'Cloud',
-      text: 'AWS (EC2, S3, IAM, RDS), cloud fundamentals',
+      title: 'CI/CD & Frameworks',
+      text: 'Jenkins, GitLab CI, Docker, test frameworks',
     },
     {
       icon: Wrench,
-      title: 'Tools & Ecosystem',
-      text: 'Git, GitHub, intellij IDEA, VS Code',
+      title: 'Tools & Methods',
+      text: 'Git, Jira, BDD, TDD, Performance testing',
     },
   ];
 
@@ -77,19 +77,21 @@ export default function About() {
                        border border-gray-100 shadow-sm"
           >
             <p className="text-lg text-gray-800 leading-relaxed mb-4">
-              I am a passionate <strong>Java Backend Developer</strong> with hands-on
-              experience in building scalable applications using{' '}
-              <strong>Java, Spring Boot</strong>.
+              I am a QA/Automation Engineer specializing in building reliable test automation
+              frameworks and ensuring product quality at scale. I focus on designing comprehensive
+              test strategies and implementing efficient automation solutions.
             </p>
 
             <p className="text-gray-700 mb-4">
-              I have worked on real-world projects involving authentication,
-              database integration, and backend system design.
+              My expertise includes creating end-to-end test automation suites, setting up CI/CD
+              pipelines for continuous testing, and implementing quality gates. I work with modern
+              testing frameworks and tools to ensure applications meet the highest quality standards.
             </p>
 
             <p className="text-gray-700">
-              Comfortable working in <strong>Agile environments</strong>, I am a quick
-              learner with a strong interest in backend systems and cloud-native development.
+              I'm passionate about finding the right balance between manual and automated testing,
+              improving test coverage, and collaborating with development teams to shift quality
+              left in the development lifecycle.
             </p>
           </motion.div>
         </div>

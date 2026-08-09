@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, CheckCircle, Download } from 'lucide-react';
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -96,14 +96,18 @@ export default function Contact() {
           {/* INFO */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold">Connect with me</h3>
+            <p className="text-gray-600">Pune, India • Open to remote opportunities</p>
             <a href="mailto:tanvaysoni90823@gmail.com" className="flex gap-3">
               <Mail /> tanvaysoni90823@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/tanvay/" target="_blank" className="flex gap-3">
-              <Linkedin /> LinkedIn
+            <a href="https://www.linkedin.com/in/tanvay/" target="_blank" rel="noreferrer" className="flex gap-3">
+              <Linkedin /> linkedin.com/in/tanvay
             </a>
-            <a href="https://github.com/TanvaySoni" target="_blank" className="flex gap-3">
-              <Github /> GitHub
+            <a href="https://github.com/TanvaySoni" target="_blank" rel="noreferrer" className="flex gap-3">
+              <Github /> github.com/TanvaySoni
+            </a>
+            <a href="/TanvaySoni_CV.pdf" download className="inline-flex items-center gap-2 text-sm text-teal-700">
+              <Download className="w-4 h-4" /> Download Resume
             </a>
           </div>
         </div>
